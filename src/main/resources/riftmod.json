@@ -1,0 +1,11 @@
+{
+    "id": "carpet",
+    "name": "CarpetMod in Rift",
+    "authors": [
+        "eeasee/ Gr_Xiaolv"
+    ],
+    "listeners": [
+        "carpet.ExampleListener",
+        "carpet.ModInitializationListener"
+    ]
+}

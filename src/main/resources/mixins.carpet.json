@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "minVersion": "0.7.11",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "package": "carpet.mixins",
+  "refmap": "mixins.carpet.refmap.json",
+  "mixins": [
+    "ClientMinecraftMixin",
+    "CommandsMixin",
+    "DedicatedServerMixin",
+    "EntitySlimeMixin",
+    "EntityZombieVillagerMixin",
+    "EntityVillagerMixin",
+    "EntityItemMixin",
+    "EntityMixin",
+    "IntegratedServerMixin",
+    "MinecraftServerMixin",
+    "SPacketPlayerListHeaderFooterMixin",
+    "WeightedRandomMixin",
+    "NetHandlerPlayServerMixin"
+  ],
+  "client": [
+  ],
+  "server": [
+  ]
+}
