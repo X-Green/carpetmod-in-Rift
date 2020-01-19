@@ -36,6 +36,7 @@ public class WoolTool
 		}
         switch (color)
         {
+            /*
             case PINK:
                 if (CarpetSettings.commandSpawn)
                     Messenger.send(placer, SpawnReporter.report(pos, worldIn));
@@ -44,7 +45,7 @@ public class WoolTool
             case BLACK:
                 if (CarpetSettings.commandSpawn)
                     Messenger.send(placer, SpawnReporter.show_mobcaps(pos, worldIn));
-                break;
+                break;*/
             case BROWN:
                 if (CarpetSettings.commandDistance)
                 {

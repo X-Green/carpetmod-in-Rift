@@ -9,8 +9,9 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 public interface SPacketPlayerListHeaderFooterMixin
 {
     @Accessor("header")
-    void setheader(ITextComponent header);
+    void setHeader(ITextComponent header);
 
     @Accessor("footer")
-    void setfooter(ITextComponent footer);
+    void setFooter(ITextComponent footer);
 }
+

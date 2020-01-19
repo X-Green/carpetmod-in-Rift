@@ -19,10 +19,11 @@ import carpet.helpers.TickSpeed;
 import javax.annotation.Nullable;
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.function.BooleanSupplier;
 
 @Mixin(MinecraftServer.class)
-public class MinecraftServerMixin
+public abstract class MinecraftServerMixin
 {
     @Final
     @Shadow
@@ -39,20 +40,25 @@ public class MinecraftServerMixin
     @Shadow
     public void tick(BooleanSupplier p_71217_1_){}
     @Shadow
-    public boolean init(){return true;}
+    public abstract boolean init();
     @Shadow
     private boolean serverIsRunning;
     @Shadow
     private long timeOfLastWarning;
     @Shadow
-    private boolean isAheadOfTime(){return false;}
+    protected abstract boolean isAheadOfTime();
     @Shadow
-    public void finalTick(@Nullable CrashReport report){}
+    public abstract void finalTick(@Nullable CrashReport report);
     @Shadow
-    public CrashReport addServerInfoToCrashReport(CrashReport report){return report;}
-    //@Shadow
-    //public File getDataDirectory(){}
-
+    public abstract CrashReport addServerInfoToCrashReport(CrashReport report);
+    @Shadow
+    public abstract File getDataDirectory();
+    @Shadow
+    private boolean serverStopped;
+    @Shadow
+    public abstract void stopServer();
+    @Shadow
+    public abstract void systemExitNow();
 
     @Inject(method = "<init>", at = @At(value = "RETURN")
     )
@@ -75,7 +81,10 @@ public class MinecraftServerMixin
     {
         CarpetServer.tick((MinecraftServer) (Object) this);
     }
-/*
+
+    /**
+     * @author carpet
+     */
     @Overwrite
     public void run()
     {
@@ -176,5 +185,5 @@ public class MinecraftServerMixin
         }
     }
 
-*/
+
 }

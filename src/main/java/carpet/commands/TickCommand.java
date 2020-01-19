@@ -38,13 +38,6 @@ public class TickCommand
                                                 c.getSource(),
                                                 getInteger(c,"ticks"),
                                                 getString(c, "tail command")))))).
-                then(literal("freeze").executes( (c)-> toggleFreeze(c.getSource()))).
-                then(literal("step").
-                        executes((c) -> step(1)).
-                        then(argument("ticks", integer(1,72000)).
-                                suggests( (c, b) -> ISuggestionProvider.suggest(new String[]{"20"},b)).
-                                executes((c) -> step(getInteger(c,"ticks"))))).
-                then(literal("superHot").executes( (c)-> toggleSuperHot(c.getSource()))).
                 then(literal("health").
                         executes( (c) -> healthReport(c.getSource(), 100)).
                         then(argument("ticks", integer(20,24000)).
@@ -86,40 +79,6 @@ public class TickCommand
         if (message != null)
         {
             source.sendFeedback(message, false);
-        }
-        return 1;
-    }
-
-    private static int toggleFreeze(CommandSource source)
-    {
-        TickSpeed.is_paused = !TickSpeed.is_paused;
-        if (TickSpeed.is_paused)
-        {
-            Messenger.m(source, "gi Game is paused");
-        }
-        else
-        {
-            Messenger.m(source, "gi Game runs normally");
-        }
-        return 1;
-    }
-
-    private static int step(int advance)
-    {
-        TickSpeed.add_ticks_to_run_in_pause(advance);
-        return 1;
-    }
-
-    private static int toggleSuperHot(CommandSource source)
-    {
-        TickSpeed.is_superHot = !TickSpeed.is_superHot;
-        if (TickSpeed.is_superHot)
-        {
-            Messenger.m(source,"gi Superhot enabled");
-        }
-        else
-        {
-            Messenger.m(source, "gi Superhot disabled");
         }
         return 1;
     }

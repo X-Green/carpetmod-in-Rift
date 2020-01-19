@@ -1,11 +1,6 @@
 package carpet;
 
-import carpet.commands.CameraModeCommand;
-import carpet.commands.CarpetCommand;
-import carpet.commands.CounterCommand;
-import carpet.commands.InfoCommand;
-import carpet.commands.LogCommand;
-import carpet.commands.TickCommand;
+import carpet.commands.*;
 import carpet.logging.LoggerRegistry;
 import carpet.settings.CarpetSettings;
 import carpet.utils.HUDController;
@@ -65,6 +60,9 @@ public class CarpetServer // static for now - easier to handle all around the co
         LogCommand.register(dispatcher);
         CameraModeCommand.register(dispatcher);
         InfoCommand.register(dispatcher);
+        PingCommand.register(dispatcher);
+        DistanceCommand.register(dispatcher);
+        PerimeterInfoCommand.register(dispatcher);
         LOGGER.info("Carpet Commands Registered");
     }
 }

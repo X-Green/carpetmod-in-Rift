@@ -6,22 +6,25 @@
   "package": "carpet.mixins",
   "refmap": "mixins.carpet.refmap.json",
   "mixins": [
-    "ClientMinecraftMixin",
-    "CommandsMixin",
-    "DedicatedServerMixin",
+    "MinecraftServerMixin",
     "EntitySlimeMixin",
     "EntityZombieVillagerMixin",
     "EntityVillagerMixin",
     "EntityItemMixin",
     "EntityMixin",
-    "IntegratedServerMixin",
-    "MinecraftServerMixin",
+    "NetHandlerPlayServerMixin",
+    "TileEntityHopperMixin",
     "SPacketPlayerListHeaderFooterMixin",
     "WeightedRandomMixin",
-    "NetHandlerPlayServerMixin"
+    "BlockCarpetMixin",
+    "CommandsMixin"
   ],
   "client": [
+    "ClientMinecraftMixin",
+    "IntegratedServerMixin",
+    "GuiInGameMixin"
   ],
   "server": [
+    "DedicatedServerMixin"
   ]
 }
