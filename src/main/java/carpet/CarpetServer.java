@@ -64,6 +64,7 @@ public class CarpetServer // static for now - easier to handle all around the co
         DistanceCommand.register(dispatcher);
         PerimeterInfoCommand.register(dispatcher);
         DrawCommand.register(dispatcher);
+        SpawnCommand.register(dispatcher);
         LOGGER.info("Carpet Commands Registered");
     }
 }

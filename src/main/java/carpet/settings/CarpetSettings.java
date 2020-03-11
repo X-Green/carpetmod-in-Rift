@@ -68,6 +68,9 @@ public class CarpetSettings {
     @Rule(desc = "Enables /draw commands", extra = "... allows for drawing simple shapes", category = COMMAND)
     public static boolean commandDraw = true;
 
+    @Rule(desc = "Enables /spawn command for spawn tracking", category = COMMAND)
+    public static boolean commandSpawn = true;
+
     @Rule(desc = "fill/clone/setblock and structure blocks cause block updates", category = CREATIVE)
     public static boolean fillUpdates = true;
 
