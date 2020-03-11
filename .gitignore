@@ -1,0 +1,7 @@
+/.gradle/
+/projects/
+.project
+/build/
+/ForgeGradle/
+/.idea/
+/out/ 
