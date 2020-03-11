@@ -62,6 +62,15 @@ public class CarpetSettings {
     )
     public static boolean commandPerimeterInfo = true;
 
+    @Rule(desc = "microtick information", category = SURVIVAL)
+    public static boolean microTick = false;
+
+    @Rule(desc = "Enables /draw commands", extra = "... allows for drawing simple shapes", category = COMMAND)
+    public static boolean commandDraw = true;
+
+    @Rule(desc = "fill/clone/setblock and structure blocks cause block updates", category = CREATIVE)
+    public static boolean fillUpdates = true;
+
     @Rule(desc = "Placing carpets may issue carpet commands for non-op players", category = SURVIVAL)
     public static boolean carpets = false;
 
